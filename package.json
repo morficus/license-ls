@@ -11,9 +11,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": "https://github.com/morficus/license-ls.git",
+  "homapge": "https://github.com/morficus/license-ls",
   "keywords": [],
   "author": "Maurice Williams <https://github.com/morficus>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "json2csv": "^4.5.1",
     "libnpm": "^2.0.1",
