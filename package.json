@@ -1,0 +1,31 @@
+{
+  "name": "license-ls",
+  "version": "1.0.0",
+  "description": "Get a list of licenses for any installed project dependencies",
+  "engines": {
+    "node": ">= 10.0",
+    "npm": ">= 6.9.0"
+  },
+  "main": "index.js",
+  "bin": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Maurice Williams <https://github.com/morficus>",
+  "license": "ISC",
+  "dependencies": {
+    "json2csv": "^4.5.1",
+    "libnpm": "^2.0.1",
+    "ora": "^3.4.0",
+    "read-package-tree": "^5.2.2",
+    "spdx-license-list": "^6.0.0",
+    "table": "^5.4.1",
+    "treeify": "^1.1.0",
+    "yargs": "^13.2.4"
+  },
+  "devDependencies": {
+    "ava": "^2.1.0",
+    "debug": "^4.1.1"
+  }
+}
