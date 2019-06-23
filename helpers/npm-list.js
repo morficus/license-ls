@@ -1,8 +1,16 @@
 const { spawn } = require('child_process')
 const package = require('../package.json')
 const debug = require('debug')(package.name)
+const optionsToArgv = require('./options-to-args')
 
-module.exports = function (options = []) {
+/**
+ * Wrapper to allow programmatic usage of the `npm ls` command
+ *
+ * @param {Object} opts
+ * @returns {Promise<Array<Object>>}
+ */
+module.exports = function (opts = {}) {
+    const options = optionsToArgv(opts)
     return new Promise((resolve, reject) => {
 
         debug('Got these options: %s', options)

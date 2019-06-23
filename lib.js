@@ -2,8 +2,12 @@ const npmLs = require('./helpers/npm-list')
 const getPackageDetails = require('./helpers/get-package-details')
 const spdx = require('spdx-license-list')
 
-
-module.exports = async function (options = []) {
+/**
+ * Get a list of licenses for any installed project dependencies
+ * @param {Object} options
+ * @returns {Promise<any[]>}
+ */
+module.exports = async function (options = {}) {
     const pathList = await npmLs(options)
     return  await Promise.all(pathList.map(async (path, index) => {
         const pkg = await getPackageDetails(path)

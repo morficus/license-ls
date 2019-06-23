@@ -23,7 +23,6 @@
     "read-package-tree": "^5.2.2",
     "spdx-license-list": "^6.0.0",
     "table": "^5.4.1",
-    "treeify": "^1.1.0",
     "yargs": "^13.2.4"
   },
   "devDependencies": {

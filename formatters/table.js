@@ -1,5 +1,12 @@
 const { table } = require('table')
 
+/**
+ * Prints the given object in an ASCII table.
+ *
+ * @param {Object} data
+ * @param {Object} labels Custom labels to over-write the default values
+ * @returns {string|*}
+ */
 module.exports =  function ({data, labels}) {
 
     const defaultLabels = {
