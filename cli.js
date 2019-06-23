@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const lib = require('./lib')
 const toTable = require('./formatters/table')
 const toCsv = require('./formatters/csv')
