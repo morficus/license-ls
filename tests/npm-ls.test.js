@@ -1,8 +1,8 @@
-const getDependencyPaths = require('../helpers/npm-list')
+const npmList = require('../helpers/npm-list')
 const test = require('ava')
 
 test('Returns a non-empty array of package paths', async (t) => {
-    const actual = await getDependencyPaths()
+    const actual = await npmList()
 
     t.true(Array.isArray(actual))
     t.true(actual.length > 0)
@@ -10,7 +10,7 @@ test('Returns a non-empty array of package paths', async (t) => {
 })
 
 test('Does not include any empty values', async (t) => {
-    const actual = await getDependencyPaths()
+    const actual = await npmList()
 
     t.true(actual.every(path => path.length > 0))
 })
