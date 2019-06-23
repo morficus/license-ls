@@ -1,5 +1,8 @@
 # License List
-List licenses for installed packages
+List licenses for installed packages.  
+
+![npm](https://img.shields.io/npm/v/license-ls.svg)
+![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/morficus/license-ls.svg)
 
 ## Features
 * JSON, CSV or ASCII table output
