@@ -9,6 +9,7 @@
   "main": "lib.js",
   "bin": "cli.js",
   "scripts": {
+    "prepublishOnly": "npm test",
     "test": "nyc --reporter=lcov --reporter=text-summary ava"
   },
   "repository": "https://github.com/morficus/license-ls.git",
