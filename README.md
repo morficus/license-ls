@@ -2,8 +2,9 @@
 List licenses for installed packages.  
 
 ![npm](https://img.shields.io/npm/v/license-ls.svg)
-![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/morficus/license-ls.svg)
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/dbc11e7aa9d037034303/maintainability)](https://codeclimate.com/github/morficus/license-ls/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/dbc11e7aa9d037034303/test_coverage)](https://codeclimate.com/github/morficus/license-ls/test_coverage)
+[![Build Status](https://travis-ci.org/morficus/license-ls.svg?branch=master)](https://travis-ci.org/morficus/license-ls)
 ## Features
 * JSON, CSV or ASCII table output
 * Specify the package depth

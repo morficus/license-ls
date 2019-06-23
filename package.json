@@ -9,7 +9,7 @@
   "main": "lib.js",
   "bin": "cli.js",
   "scripts": {
-    "test": "ava"
+    "test": "nyc --reporter=lcov --reporter=text-summary ava"
   },
   "repository": "https://github.com/morficus/license-ls.git",
   "homapge": "https://github.com/morficus/license-ls",
@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "ava": "^2.1.0",
-    "debug": "^4.1.1"
+    "debug": "^4.1.1",
+    "nyc": "^14.1.1"
   }
 }
