@@ -15,6 +15,13 @@ test('Does not include any empty values', async (t) => {
     t.true(actual.every(path => path.length > 0))
 })
 
+test('Does not include the current package', async (t) => {
+    const expected = process.cwd()
+    const actual = await npmList()
+
+    t.true(actual.every(path => path !== expected))
+})
+
 test('Produces different results when given different options', async (t) => {
     const [prodOnly, devOnly] = await Promise.all([
         await npmList({depth: 0, prod: true}),

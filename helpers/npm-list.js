@@ -31,6 +31,7 @@ module.exports = function (opts = {}) {
 
         cmdNpmList.on('close', (exitCode) => {
 
+            const currentPackagePath = process.cwd()
             const bracketsRegEx = /[\[\]']/gi
             packagePaths = packagePaths
                 // handle edge-cases where npm-ls just returns a single item in a stringifyed-array (such as when doing `--depth=-1)
@@ -38,9 +39,11 @@ module.exports = function (opts = {}) {
                 // break concatenated paths in to an array
                 .split('\n')
                 // extraneous spaces
-                .map(item => item.trim())
+                .map(path => path.trim())
                 // remove blanks
-                .filter(item => item)
+                .filter(path => path)
+                // filter out the top-level package
+                .filter(path => path !== currentPackagePath)
 
             debug('The `node ls` command exited with the following code: %s', exitCode)
             debug('Total paths found: %s', packagePaths.length)
