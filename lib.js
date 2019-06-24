@@ -21,6 +21,7 @@ module.exports = async function (options = {}) {
             repository: (pkg.repository || {}).url,
             author: (pkg.author || {}).name,
             homepage: pkg.homepage,
+            path,
             dependencyLevel: pkg._development ? 'development' : 'production'
         }
     }))

@@ -4,36 +4,55 @@ const toTable = require('./formatters/table')
 const toCsv = require('./formatters/csv')
 const toJson = require('./formatters/json')
 const toXml = require('./formatters/xml')
-const { argv } = require('yargs')
 const ora = require('ora')
+const cliOptions = require('./cli-options')
+const argv = require('yargs')
+    .usage('$0', 'List licenses for installed packages (https://github.com/morficus/license-ls)')
+    .options(cliOptions)
+    // force comma-separated values in to arrays
+    .coerce(['include'], function (input) {
+        if (input.length > 1) {
+            return input
+        } else {
+            return input[0].split(',')
+        }
+    })
+    .argv
 
-const spinner = ora('Analyzing').start()
 const options = Object.assign({}, argv)
-// remove the useless argv attributes
+// remove the useless stuff form yargs
 delete options._
 delete options.$0
+
+const spinner = ora('Analyzing').start()
 
 lib(options)
     .then(async results => {
         let output = ''
 
+        // grab only the properties that need to be included
+        // this is basically the same as _.pluck is doing
+        const limited = results.map(package => {
+            return options.include.reduce((aggregate, key) => {
+                aggregate[key] = package[key]
+                return aggregate
+            }, {})
+        })
+
         spinner.succeed().start('Building output format')
-        const format = argv.format || 'table'
+        const format = options.format
         switch (format) {
             case 'table':
-                output = await toTable({data: results, header: options.header})
+                output = await toTable({data: limited, header: options.table.header})
                 break
             case 'csv':
-                output = await toCsv(results, options.delimiter)
+                output = await toCsv(limited, options.csv.delimiter)
                 break
             case 'json':
-                output = toJson(results)
+                output = toJson(limited)
                 break
             case 'xml':
-                output = toXml({data: results})
-                break
-            default:
-                output = await toTable({data: results, options: options.xml})
+                output = toXml({data: limited, options: options.xml})
                 break
         }
         spinner.succeed()

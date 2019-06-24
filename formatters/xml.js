@@ -32,7 +32,7 @@ function asEntry(details){
 }
 
 const defaultOptions = {
-    asAttrs: true
+    asAttrs: false
 }
 module.exports = function ({data, options}) {
 
