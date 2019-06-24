@@ -15,3 +15,13 @@ test('Does not include any empty values', async (t) => {
     t.true(actual.every(path => path.length > 0))
 })
 
+test('Produces different results when given different options', async (t) => {
+    const [prodOnly, devOnly] = await Promise.all([
+        await npmList({depth: 0, prod: true}),
+        await npmList({depth: 0, dev: true})]
+    )
+
+    t.true(prodOnly.length > devOnly.length)
+    t.notDeepEqual(prodOnly, devOnly)
+})
+

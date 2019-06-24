@@ -11,7 +11,7 @@ module.exports =  function ({data, labels}) {
 
     const defaultLabels = {
         id: 'Row #',
-        package: 'Name',
+        name: 'Package Name',
         version: 'Version',
         license: 'License',
         homepage: 'Homepage',
