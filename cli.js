@@ -9,6 +9,7 @@ const cliOptions = require('./cli-options')
 const argv = require('yargs')
     .usage('$0', 'List licenses for installed packages (https://github.com/morficus/license-ls)')
     .options(cliOptions)
+    .hide('table')
     // force comma-separated values in to arrays
     .coerce(['include'], function (input) {
         if (input.length > 1) {

@@ -38,6 +38,10 @@ module.exports = {
     type: 'string',
     default: ','
   },
+  table: {
+    description: 'just a placeholder, has not effect on its own',
+    default: {}
+  },
   'table.header.*': {
     description: 'changes the default header name for table output (ie: `--table.header.name=Module`)',
     type: 'string',
