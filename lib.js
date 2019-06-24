@@ -5,7 +5,7 @@ const getExpandedLicName = require('./helpers/get-spdx-full-name')
 /**
  * Get a list of licenses for any installed project dependencies
  * @param {Object} options
- * @returns {Promise<any[]>}
+ * @returns {Promise<[]>}
  */
 module.exports = async function (options = {}) {
     const pathList = await npmLs(options)

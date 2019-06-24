@@ -16,7 +16,9 @@ List licenses for installed packages.
 ## Available options
 * Most [npm-ls](https://docs.npmjs.com/cli/ls.html)  arguments are available and results in the same behavior (with exception of `json`, `long` and `parseable`, which have no effect)
 * `--format`: specify the output format as json, table or csv (defaults to table)
-* `--delimiter`: only valid when using the csv output format, character the use as the value separator (defaults to `,`) 
+* `--delimiter`: only valid when using the csv output format, character the use as the value separator (defaults to `,`)
+* `--header.*`: only valid for table output, changes the default header name for table output (ie: `--header.name=Module`)
+  * Here is a list of possible values for `*`: `id`, name`, `version`, `license`, `homepage`, `repository`, `author`, `dependecyLevel` 
 
 ## Examples
 Get a list of all dependency packages
@@ -42,6 +44,11 @@ npx license-ls --format=json
 Save results to a file
 ```bash
 npx license-ls --depth=0 > report.txt
+```
+
+Set some custom table headers
+```bash
+npx license-ls --depth=0 --header.name=Module --header.repository="Repo URL" --header.author="Who made this?"
 ```
 
 ## Sample Output formats

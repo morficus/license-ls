@@ -1,10 +1,10 @@
 /**
  * Convert an Object to a proper JSON string
  *
- * @param {String} data
- * @returns {string|Array}
+ * @param {Array} data
+ * @returns {string}
  */
-module.exports = function (data) {
+module.exports = function (data = []) {
     try {
         return JSON.stringify(data, null, 2)
     } catch (err) {

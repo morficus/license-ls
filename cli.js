@@ -20,7 +20,7 @@ lib(options)
         const format = argv.format || 'table'
         switch (format) {
             case 'table':
-                output = await toTable({data: results})
+                output = await toTable({data: results, header: options.header})
                 break
             case 'csv':
                 output = await toCsv(results, argv.delimiter)

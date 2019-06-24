@@ -7,7 +7,7 @@ const { table } = require('table')
  * @param {Object} labels Custom labels to over-write the default values
  * @returns {string|*}
  */
-module.exports =  function ({data, labels}) {
+module.exports =  function ({data, header}) {
 
     const defaultLabels = {
         id: 'Row #',
@@ -20,7 +20,7 @@ module.exports =  function ({data, labels}) {
         dependencyLevel: 'Dependency type'
     }
 
-    const finalLabels = Object.assign({}, labels, defaultLabels)
+    const finalLabels = Object.assign({}, defaultLabels, header)
 
     const headers = Object.keys(data[0]).map(key => finalLabels[key])
     const rows = data.map(Object.values)
