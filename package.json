@@ -1,6 +1,6 @@
 {
   "name": "license-ls",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Get a list of licenses for any installed project dependencies",
   "engines": {
     "node": ">= 10.0",
