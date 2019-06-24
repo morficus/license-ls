@@ -5,10 +5,13 @@ List licenses for installed packages.
 [![Maintainability](https://api.codeclimate.com/v1/badges/dbc11e7aa9d037034303/maintainability)](https://codeclimate.com/github/morficus/license-ls/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/dbc11e7aa9d037034303/test_coverage)](https://codeclimate.com/github/morficus/license-ls/test_coverage)
 [![Build Status](https://travis-ci.org/morficus/license-ls.svg?branch=master)](https://travis-ci.org/morficus/license-ls)
+
 ## Features
 * JSON, CSV or ASCII table output
 * Specify the package depth
 * Ability to limit list to only dev or only production packages
+* Support for converting SPDX expressions in to their full names
+* Can be used programmatically for maximum flex- and extensibility
 
 ## Available options
 * Most [npm-ls](https://docs.npmjs.com/cli/ls.html)  arguments are available and results in the same behavior (with exception of `json`, `long` and `parseable`, which have no effect)
