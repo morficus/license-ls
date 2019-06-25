@@ -72,3 +72,13 @@ test('Can handle expressions with "+" in complex expressions', (t) => {
 
     t.is(actual, expected)
 })
+
+test('Does not blow up if given a non-string value', (t) => {
+    [null, undefined, 42, ['test'], {test: 'hello'}].forEach(payload => {
+        let expected = ''
+        let actual = getLongName(payload)
+
+        t.is(actual, expected)
+    })
+
+})

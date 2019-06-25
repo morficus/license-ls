@@ -34,8 +34,8 @@ function traverse(obj) {
  */
 module.exports = function (identifier = '') {
 
-    const normalised = identifier.toUpperCase()
     try {
+        const normalised = identifier.toUpperCase()
         let expandedText = ''
         if (normalised === 'UNLICENSED') {
             expandedText = 'Proprietary License'
