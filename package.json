@@ -29,19 +29,19 @@
   "license": "MIT",
   "dependencies": {
     "glob": "^7.1.4",
-    "json2csv": "^4.5.1",
+    "json2csv": "^4.5.2",
     "jstoxml": "^1.5.0",
-    "libnpm": "^2.0.1",
-    "lodash": "^4.17.11",
+    "libnpm": "^3.0.1",
+    "lodash": "^4.17.15",
     "ora": "^3.4.0",
-    "read-package-tree": "^5.2.2",
+    "read-package-tree": "^5.3.1",
     "spdx-expression-parse": "^3.0.0",
-    "spdx-license-list": "^6.0.0",
-    "table": "^5.4.1",
-    "yargs": "^13.2.4"
+    "spdx-license-list": "^6.1.0",
+    "table": "^5.4.6",
+    "yargs": "^14.0.0"
   },
   "devDependencies": {
-    "ava": "^2.1.0",
+    "ava": "^2.3.0",
     "debug": "^4.1.1",
     "nyc": "^14.1.1"
   },
