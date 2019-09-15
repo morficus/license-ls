@@ -442,4 +442,4 @@ licenseLs(options)
 
 ## Contributing
 Want a new feature added? Found a bug?
-Go ahead an open [a new issue](https://github.com/morficus/license-ls/issues/new) or feel free to subject pull requests
+Go ahead an open [a new issue](https://github.com/morficus/license-ls/issues/new) or feel free to submit a pull request
