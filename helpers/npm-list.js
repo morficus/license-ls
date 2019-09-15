@@ -1,4 +1,4 @@
-const { spawn } = require('child_process')
+const spawn = require('cross-spawn')
 const package = require('../package.json')
 const debug = require('debug')(package.name)
 const optionsToArgv = require('./options-to-args')
