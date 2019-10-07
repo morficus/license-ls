@@ -31,7 +31,7 @@ You can always run `npx license-ls --help` to get this documentation
 
 ### Table specific options
 * `--table.header.*`: changes the default header name for table output (ie: `--header.name=Module`)
-  * Here is a list of possible values for `*`: `id`, name`, `version`, `license`, `homepage`, `repository`, `author`, `dependencyLevel`
+  * Here is a list of possible values for `*`: `id`, `name`, `version`, `license`, `homepage`, `repository`, `author`, `dependencyLevel`
 
 ### XML specific options
 * `--xml.asAttrs`: uses each package property as the XML tag element, with the package name as the content (see "XML Output #2" in the Examples section) 
