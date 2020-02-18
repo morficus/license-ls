@@ -1,5 +1,4 @@
-const { promisify } = require('util')
-const readPackageTree = promisify(require('read-package-tree'))
+const readPackageTree = require('read-package-tree')
 
 /**
  * Gte full package information for a module at the given path

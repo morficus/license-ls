@@ -3,6 +3,7 @@ const package = require('../package.json')
 const debug = require('debug')(package.name)
 const optionsToArgv = require('./options-to-args')
 
+
 /**
  * Wrapper to allow programmatic usage of the `npm ls` command
  *
@@ -10,10 +11,12 @@ const optionsToArgv = require('./options-to-args')
  * @returns {Promise<Array<Object>>}
  */
 module.exports = function (opts = {}) {
-    const options = optionsToArgv(opts)
+    const blackListOpts = ['format']
+    const options = optionsToArgv(opts, blackListOpts)
+    
     return new Promise((resolve, reject) => {
 
-        debug('Got these options: %s', options)
+        debug('Got these options: %s', JSON.stringify(options, null, 2))
 
         // always pass in the `parseable` flag so that the value can be used programmatically
         const cmdNpmList = spawn('npm', ['list', '--parseable', ...options])

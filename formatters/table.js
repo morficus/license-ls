@@ -1,4 +1,6 @@
 const { table } = require('table')
+const { isEmpty } = require('lodash')
+
 
 /**
  * Prints the given object in an ASCII table.
@@ -8,6 +10,11 @@ const { table } = require('table')
  * @returns {string|*}
  */
 module.exports =  function ({data, header}) {
+
+    if (isEmpty(data)) {
+        return 'No data was present so no table was generated'
+    }
+
 
     const defaultLabels = {
         id: 'Row #',

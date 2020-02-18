@@ -14,7 +14,7 @@ module.exports = async function (options = {}) {
     const pathList = await npmLs(options)
     return  await Promise.all(pathList.map(async (path, index) => {
         const pkg = await getPackageDetails(path)
-        const licShortName = extractLicenseText(pkg.license || pkg.licenses)
+        const licShortName = extractLicenseText(pkg.license || pkg.licenses || pkg.licence || pkg.licences)
         const licLongName = getExpandedLicName(licShortName) || 'unknown'
 
         // find any local licences files and build a path to them
@@ -28,7 +28,7 @@ module.exports = async function (options = {}) {
             licenseId: licShortName,
             licenseFullName: licLongName,
             licenseFilePath: licFilePath || [],
-            license: `${licLongName} (${licShortName})`,
+            license: `${licLongName} (${licShortName || '?'})`,
             repository: (pkg.repository || {}).url,
             author: (pkg.author || {}).name,
             homepage: pkg.homepage,
