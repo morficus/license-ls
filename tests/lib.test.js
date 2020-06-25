@@ -31,6 +31,12 @@ test('Every package result has the package dependency level', async t => {
     t.true(actual.every(p => p.hasOwnProperty('dependencyLevel')))
 })
 
+test('Every package result has the description', async t => {
+    const actual = await lib()
+    t.true(Array.isArray(actual))
+    t.true(actual.every(p => p.hasOwnProperty('description')))
+})
+
 test('Every package result has the package license as text', async t => {
     const actual = await lib()
     t.true(Array.isArray(actual))

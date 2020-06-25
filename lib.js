@@ -33,7 +33,8 @@ module.exports = async function (options = {}) {
             author: (pkg.author || {}).name,
             homepage: pkg.homepage,
             path,
-            dependencyLevel: pkg._development ? 'development' : 'production'
+            dependencyLevel: pkg._development ? 'development' : 'production',
+            description: pkg.description
         }
     }))
 

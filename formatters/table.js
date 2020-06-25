@@ -27,7 +27,8 @@ module.exports =  function ({data, header}) {
         homepage: 'Homepage',
         repository: 'Repository',
         author: 'Author',
-        dependencyLevel: 'Dependency type'
+        dependencyLevel: 'Dependency type',
+        description: 'Description'
     }
 
     const finalLabels = Object.assign({}, defaultLabels, header)

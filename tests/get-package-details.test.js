@@ -10,7 +10,8 @@ test('Returns details for a package at a given path', async (t) => {
             type: 'git',
             url: 'git+https://github.com/avajs/ava.git'
         },
-        license: 'MIT'
+        license: 'MIT',
+        description: 'Testing can be a drag. AVA helps you get it done.'
     }
     const actual = await getPackageDetails(path)
 
@@ -18,6 +19,7 @@ test('Returns details for a package at a given path', async (t) => {
     t.is(actual.homepage, expected.homepage)
     t.is(actual.license, expected.license)
     t.is(actual.repository.url, expected.repository.url)
+    t.is(actual.description, expected.description)
 })
 
 test('Should fail if the path does not exist', async (t) => {
