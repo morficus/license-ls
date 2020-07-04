@@ -12,7 +12,7 @@ module.exports = {
   include: {
     description: 'List of properties to include',
     type: 'array',
-    choices: ['id', 'name', 'version', 'license', 'licenseId', 'licenseFullName', 'licenseFilePath', 'path',  'repository', 'author', 'homepage', 'dependencyLevel'],
+    choices: ['id', 'name', 'version', 'license', 'licenseId', 'licenseFullName', 'licenseFilePath', 'path',  'repository', 'author', 'homepage', 'dependencyLevel', 'description'],
     default: ['id', 'name', 'version', 'license', 'repository', 'author', 'homepage', 'dependencyLevel']
   },
   production: {
