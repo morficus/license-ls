@@ -22,11 +22,11 @@ test('Returns details for a package at a given path', async (t) => {
     t.is(actual.description, expected.description)
 })
 
-test('Should fail if the path does not exist', async (t) => {
+test('Should return null if the path does not exist', async (t) => {
     const path = './some-fake-path'
     try {
-        await getPackageDetails(path)
-        t.fail('Expected an exception')
+        const actual = await getPackageDetails(path)
+        t.is(actual, null)
     } catch (err) {
         t.pass()
     }

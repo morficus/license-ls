@@ -13,7 +13,7 @@ const optionsToArgv = require('./options-to-args')
 module.exports = function (opts = {}) {
     const blackListOpts = ['format']
     const options = optionsToArgv(opts, blackListOpts)
-    
+
     return new Promise((resolve, reject) => {
 
         debug('Got these options: %s', JSON.stringify(options, null, 2))
