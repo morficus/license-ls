@@ -11,7 +11,7 @@ const optionsToArgv = require('./options-to-args')
  * @returns {Promise<Array<Object>>}
  */
 module.exports = function (opts = {}) {
-    const blackListOpts = ['format']
+    const blackListOpts = ['format', 'csv']
     const options = optionsToArgv(opts, blackListOpts)
     
     return new Promise((resolve, reject) => {
