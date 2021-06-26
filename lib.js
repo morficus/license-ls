@@ -12,7 +12,7 @@ const glob = promisify(require('glob'))
  */
 module.exports = async function (options = {}) {
     const pathList = await npmLs(options)
-    return  await Promise.all(pathList.map(async (path, index) => {
+    return Promise.all(pathList.map(async (path, index) => {
         const pkg = await getPackageDetails(path)
         const licShortName = extractLicenseText(pkg.license || pkg.licenses || pkg.licence || pkg.licences)
         const licLongName = getExpandedLicName(licShortName) || 'unknown'
