@@ -1,5 +1,6 @@
 const npmList = require('../helpers/npm-list')
 const test = require('ava')
+const fs = require('fs')
 
 test('Returns a non-empty array of package paths', async (t) => {
     const actual = await npmList()
@@ -30,5 +31,23 @@ test('Produces different results when given different options', async (t) => {
 
     t.true(prodOnly.length > devOnly.length)
     t.notDeepEqual(prodOnly, devOnly)
+})
+
+test('Handles more complex options correctly', async (t) => {
+    const opts = {
+        csv: { delimiter: ',' },
+        depth: 0,
+        format: 'json',
+        prod: true,
+        production: true,
+        include: [ 'id', 'name', 'version', 'license', 'repository', 'author', 'homepage', 'dependencyLevel' ],
+        table: {},
+        xml: { asAttrs: false, 'as-attrs': false }
+    }
+
+    const actual = await npmList(opts);
+
+    t.true(actual.length > 0)
+    actual.forEach(path => t.true(fs.existsSync('' + path), `invalid path: ${path}`))
 })
 
