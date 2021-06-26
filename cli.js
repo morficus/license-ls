@@ -59,3 +59,7 @@ lib(options)
         spinner.succeed()
         console.log(output)
     })
+    .catch(reason => {
+        spinner.fail('Unexpected error')
+        console.error(reason);
+    })
