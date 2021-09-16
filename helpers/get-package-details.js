@@ -10,7 +10,11 @@ module.exports = async function (path) {
     if (!path) {
         throw new Error('You must specify a path')
     }
-    const raw = await readPackageTree(path)
-    return raw.package
-
+    try {
+        const raw = await readPackageTree(path)
+        return raw.package
+    } catch (e) {
+        console.error(`Reading package tree failed for ${path}.`, e);
+        return null;
+    }
 }

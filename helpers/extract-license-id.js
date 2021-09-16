@@ -1,7 +1,7 @@
 const { isString, isObject, isArray, compact } = require('lodash')
 
 /**
- * Deal with all the crazy stuff the "license" field in package.json can have and return only the SPDX ID (if any)
+ * Deal with all the wild stuff the "license" field in package.json can have and return only the SPDX ID (if any).
  *
  * @param {*} license
  * @returns {string}
